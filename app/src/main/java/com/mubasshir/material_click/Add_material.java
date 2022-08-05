@@ -37,6 +37,7 @@ public class Add_material extends AppCompatActivity {
     Spinner material;
     TextView amount;
     Button save;
+//    Button back;
     Calendar calendar;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -55,6 +56,15 @@ public class Add_material extends AppCompatActivity {
         urate=findViewById(R.id.edUnitrate);
         amount=findViewById(R.id.tvAmount);
         save=findViewById(R.id.btn_save);
+//        back=findViewById(R.id.btn_back);
+
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(Add_material.this,Material_fragment.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         TextWatcher textWatcher=new TextWatcher() {
