@@ -4,24 +4,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private List<model> modelList;
-
-    public MyAdapter(List<model> modelList, Context context) {
-        this.modelList = modelList;
+    ArrayList<material_info> list;
+    Context context;
+    public MyAdapter(List<material_info> materialinfoList, Context context) {
+        this.list = list;
         this.context = context;
     }
 
-    private Context context;
 
     @NonNull
     @Override
@@ -32,7 +31,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        model listitem = modelList.get(position);
+        material_info listitem = list.get(position);
 
         holder.txtMaterial.setText(listitem.getMaterial());
         holder.txtQuantity.setText(listitem.getQuantity());
@@ -42,7 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return modelList.size();
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

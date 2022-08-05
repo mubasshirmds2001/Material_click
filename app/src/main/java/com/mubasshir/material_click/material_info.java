@@ -1,11 +1,11 @@
 package com.mubasshir.material_click;
 
-public class model {
+public class material_info {
     private String party,date,material,quantity,rate,amount;
 
 
 
-    public model(){
+    public material_info(){
 
     }
 

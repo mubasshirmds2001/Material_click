@@ -4,13 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +37,7 @@ public class Add_material extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     int maxid=0;
-    model modelclass;
+    material_info modelclass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +86,9 @@ public class Add_material extends AppCompatActivity {
         quantity.addTextChangedListener(textWatcher);
         urate.addTextChangedListener(textWatcher);
 
-        modelclass=new model();
+        modelclass=new material_info();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Projects").child("Material Info");
+        reference = FirebaseDatabase.getInstance().getReference("Projects").child("Material Info");
 //        materialreference = reference.child(FirebaseAuth.getInstance().getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
